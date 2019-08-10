@@ -1,0 +1,63 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+class admin{
+	char name[10];
+	float price;
+	static int nooi;
+public:
+	void add()
+	{
+		cout<<"Enter the Name of Icecream you want to add to database\n";
+        cin>>name;
+        cout<<"\nEnter the price of this Icecream\n";
+        cin>>price;
+
+    }
+    void show()
+    {
+    	cout<<"The name of Icecream is "<<name<<"\nThe Price of this icecream is "<<price;
+
+    }
+};
+int main()
+{
+	admin a;
+	int c=0;
+char pass[5],r[]="admin";
+
+	char ch;
+	int i=0;
+	cout<<"Who are you(admin(a) or user(u)) ?";
+	cin>>ch;
+	switch(ch)
+	{
+		case 'a':cout<<"Enter password to access\n";
+
+		for (int i=0;i<5;i++)
+ {
+  pass[i] = getch();
+  cout<<"*";
+
+ }
+ cout<<"\n";
+
+ for (int j=0;j<5;j++)
+  {
+    if (pass[j] == r[j])
+    c = c+1;
+  }
+
+if (c == 5)
+    {
+    a.add();
+    a.show();}
+else
+    cout<<"Invalid Password";
+       break;
+       case 'u':cout<<"The Icecream are";
+       a.show();
+   }
+   getch();
+}
